@@ -1,1 +1,4 @@
-# thermal_printer
+
+
+Thermal printer for DevTerm
+
