@@ -658,16 +658,17 @@ void loop() {
   }
   */
   
-  FILE *fp;
+  int *fp;
   char readbuf[2];
     
   while(1) {
-    fp = NULL;
-    fp = open(FIFO_FILE, O_RDONLY);
-    if (fp != NULL) {
+    fp = -1;
+    fp = open(FIFO_FILE, O_RDONLY, 0666);
+    if (fp != -1) {
       while(1)
       {	
         read(fp,readbuf, 1);
+        //printf("read %x",readbuf[0]);
         parse_serial_stream(&g_config,readbuf[0]);
       }
       close(fp);
