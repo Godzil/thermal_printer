@@ -658,7 +658,7 @@ void loop() {
   }
   */
   
-  int *fp;
+  int fp;
   char readbuf[2];
     
   while(1) {
